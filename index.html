@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>AlgoBoom.fun</title>
+    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap\" rel=\"stylesheet\">
+    <style>
+        body {
+            background: linear-gradient(135deg, #6A0DAD, #3B0262);
+            color: #FFFFFF;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            z-index: 1;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+        .highlight {
+            color: #FFDD57;
+        }
+        .stars, .coins {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .star, .coin {
+            position: absolute;
+            background-color: #FFF;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #FFF, 0 0 15px #FFF;
+        }
+        .coin {
+            background-color: #FFDD57;
+            width: 10px;
+            height: 10px;
+            box-shadow: 0 0 10px #FFDD57, 0 0 20px #FFDD57;
+        }
+        .star.small {
+            width: 3px;
+            height: 3px;
+        }
+        .star.medium {
+            width: 5px;
+            height: 5px;
+        }
+        .star.large {
+            width: 8px;
+            height: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class=\"container\">
+        <h1>Welcome to <span class=\"highlight\">AlgoBoom.fun</span> 🚀</h1>
+        <p>Ready for some <strong>explosive pump fun</strong> on the Algorand blockchain? AlgoBoom is your ultimate destination for exciting token action. Fasten your seatbelts and enjoy the ride to the moon!</p>
+    </div>
+
+    <script>
+        const createStarsAndCoins = () => {
+            const sizes = ['small', 'medium', 'large'];
+            const body = document.body;
+
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                starSize = sizes[Math.floor(Math.random() * sizes.length)];
+                star.className = `star ${sizes[Math.floor(Math.random() * sizes.length)]}`;
+                star.style.top = Math.random() * 100 + '%';
+                star.style.left = Math.random() * 100 + '%';
+                document.body.appendChild(star);
+            }
+
+            for (let i = 0; i < 10; i++) {
+                const coin = document.createElement('div');
+                coin.className = 'coin';
+                coin.style.width = coin.style.height = '10px';
+                coin.style.top = Math.random() * 100 + '%';
+                coin.style.left = Math.random() * 100 + '%';
+                document.body.appendChild(coin);
+            }
+        }
+
+        createStarsAndCoins();
+    </script>
+</body>
+</html>
